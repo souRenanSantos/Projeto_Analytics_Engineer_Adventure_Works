@@ -115,11 +115,9 @@ sources:
         columns:
           - name: SALESORDERID
             data_tests:
-              - unique
               - not_null
           - name: SALESREASONID
             data_tests:
-              - unique
               - not_null
               
       - name: SALESREASON

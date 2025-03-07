@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: | 
+      This dimension provides detailed information about customers, 
+      their associated stores, territories, and countries.
+    columns:
+      - name: sk_customer
+        description: Unique surrogate key for the customer.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Name of the customer.
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store associated with the customer (if applicable).
+
+      - name: territory_name
+        description: Name of the sales territory associated with the customer.
+        
+      - name: country_name
+        description: Name of the country associated with the customer.
+      
+      - name: country_code
+        description: Code of the country associated with the customer.
