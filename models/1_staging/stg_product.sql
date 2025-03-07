@@ -30,8 +30,8 @@ with
         select
             {{ dbt_utils.generate_surrogate_key(['pk_product']) }} as sk_product
             , pk_product
-            , {{ dbt_utils.generate_surrogate_key(['product_subcategory_id']) }} as sk_product_subcategory
-            , {{ dbt_utils.generate_surrogate_key(['product_model_id']) }} as sk_product_model
+            , {{ dbt_utils.generate_surrogate_key(['product_subcategory_id']) }} as fk_product_subcategory
+            , {{ dbt_utils.generate_surrogate_key(['product_model_id']) }} as fk_product_model
             , product_name
             , product_color
         from increment_zero_key
