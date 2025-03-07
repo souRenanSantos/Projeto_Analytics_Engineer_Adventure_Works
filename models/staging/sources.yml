@@ -1,0 +1,138 @@
+sources:
+  - name: SNOWFLAKE
+    description: |
+      Tables from the sales, personnel, humam resources,
+      and production areas of the Adventure Works database.
+    schema: raw_adventure_works
+    database: fea24_11
+    tables:
+      - name: PERSON
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: CUSTOMER
+        columns:
+          - name: CUSTOMERID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: STORE
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: SALESTERRITORY
+        columns:
+          - name: TERRITORYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: STATEPROVINCE
+        columns:
+          - name: STATEPROVINCEID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: COUNTRYREGION
+        columns:
+          - name: COUNTRYREGIONCODE
+            data_tests:
+              - unique
+              - not_null
+
+      - name: SALESORDERHEADER
+        columns:
+          - name: SALESORDERID
+            data_tests:
+              - unique
+              - not_null
+            
+      - name: PRODUCT
+        columns:
+          - name: PRODUCTID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: PRODUCTMODEL
+        columns:
+          - name: PRODUCTMODELID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: PRODUCTSUBCATEGORY
+        columns:
+          - name: PRODUCTSUBCATEGORYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: PRODUCTCATEGORY
+        columns:
+          - name: PRODUCTCATEGORYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: EMPLOYEE
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: SALESPERSON
+        columns:
+          - name: BUSINESSENTITYID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: ADDRESS
+        columns:
+          - name: ADDRESSID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: SALESORDERDETAIL
+        columns:
+          - name: SALESORDERDETAILID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: SALESORDERHEADERSALESREASON
+        columns:
+          - name: SALESORDERID
+            data_tests:
+              - unique
+              - not_null
+          - name: SALESREASONID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: SALESREASON
+        columns:
+          - name: SALESREASONID
+            data_tests:
+              - unique
+              - not_null
+              
+      - name: CREDITCARD
+        columns:
+          - name: CREDITCARDID
+            data_tests:
+              - unique
+              - not_null
+              
