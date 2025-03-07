@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: |
+      This dimension provides detailed information about products,
+      their models, subcategories, categories, and colors.
+    columns:
+      - name: sk_product
+        description: Unique surrogate key for the product.
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        description: Name of the product.
+        tests:
+          - not_null
+
+      - name: product_model
+        description: Model of the product.
+
+      - name: product_subcategory
+        description: Subcategory of the product.
+
+      - name: product_category
+        description: Category of the product.
+
+      - name: product_color
+        description: Color of the product.

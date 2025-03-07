@@ -19,7 +19,7 @@ with
 
     , add_surrogates_keys as (
         select
-            {{ dbt_utils.generate_surrogate_key(['pk_product_category']) }} as sk_product_subcategory
+            {{ dbt_utils.generate_surrogate_key(['pk_product_category']) }} as sk_product_category
             , pk_product_category
             , product_category
         from increment_zero_key
