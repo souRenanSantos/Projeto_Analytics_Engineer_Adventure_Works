@@ -24,7 +24,7 @@ with
         select
             {{ dbt_utils.generate_surrogate_key(['pk_territory']) }} as sk_territory
             , pk_territory
-            , {{ dbt_utils.generate_surrogate_key(['country_region_code']) }} as fk_territory
+            , {{ dbt_utils.generate_surrogate_key(['country_region_code']) }} as fk_country
             , territory_name
         from increment_zero_key
     )

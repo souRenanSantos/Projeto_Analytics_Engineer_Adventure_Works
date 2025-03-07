@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_dim_customers
+    description: |
+      Intermediate model that combines information from customers, personnel,
+      stores, territories, and countries to create a consolidated customer dimension.
+    columns:
+      - name: sk_customer
+        description: Unique surrogate key for the customer.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_name
+        description: Name of the customer.
+        tests:
+          - not_null
+
+      - name: store_name
+        description: Name of the store associated with the customer (if applicable).
+
+      - name: territory_name
+        description: Name of the sales territory associated with the customer.
+
+      - name: country_name
+        description: Name of the country associated with the customer.
+
+      - name: country_code
+        description: Code of the country associated with the customer.
