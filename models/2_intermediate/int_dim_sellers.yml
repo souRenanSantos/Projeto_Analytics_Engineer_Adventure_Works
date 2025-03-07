@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: int_dim_sellers
+    description: | 
+      This model combines information from salespeople, personnel,
+      and employees to create a consolidated salesperson dimension.
+    columns:
+      - name: sk_seller
+        description: Unique surrogate key for the salesperson.
+        tests:
+          - unique
+          - not_null
+
+      - name: seller_name
+        description: Name of the salesperson.
+        tests:
+          - not_null
+
+      - name: seller_job_tittle
+        description: Salesperson's job title.
+
+      - name: seller_sales_quota
+        description: Salesperson's sales quota.
+
+      - name: seller_bonus
+        description: Salesperson's bonus amount.
+
+      - name: seller_commission_pct
+        description: Salesperson's commission percentage.
