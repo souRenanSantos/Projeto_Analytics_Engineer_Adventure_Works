@@ -28,6 +28,8 @@ with
             , {{ dbt_utils.generate_surrogate_key(['credit_card_id']) }} as fk_credit_card
             , {{ dbt_utils.generate_surrogate_key(['order_date']) }} as fk_order_date
             , {{ dbt_utils.generate_surrogate_key(['ship_date']) }} as fk_ship_date
+            , order_date
+            , ship_date
             , freight
             , order_id
             , is_online
