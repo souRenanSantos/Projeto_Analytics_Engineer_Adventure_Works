@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: |
+      This dimension provides detailed information about addresses,
+      including city, state/province, and country.
+    columns:
+      - name: sk_address
+        description: Unique surrogate key for the address.
+        tests:
+          - unique
+          - not_null
+      
+      - name: address_line_1
+        description: First line of the address.
+      
+      - name: address_line_2
+        description: Second line of the address (if available).
+      
+      - name: city_name
+        description: Name of the city.
+      
+      - name: state_province_name
+        description: Name of the state or province.
+      
+      - name: state_province_code
+        description: Code of the state or province.
+      
+      - name: country_name
+        description: Name of the country.
+      
+      - name: country_code
+        description: Code of the country.
+      
+      - name: postal_code
+        description: Postal code for the address.
+      
+      - name: spatial_location
+        description: Spatial coordinates of the address.
