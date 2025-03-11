@@ -5,7 +5,7 @@ with
             , cast(SALESORDERID as int) as order_id
             , cast(PRODUCTID as int) as product_id
             , cast(ORDERQTY as int) as quantity
-            , cast(UNITPRICE as decimal(10,2)) as unit_price
+            , cast(UNITPRICE as decimal(18,6)) as unit_price
             , cast(UNITPRICEDISCOUNT as float) as discount_pct
         from {{ source('SNOWFLAKE', 'SALESORDERDETAIL') }}
     )
