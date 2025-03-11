@@ -1,0 +1,119 @@
+version: 2
+
+models:
+  - name: fact_orders_details
+    description: | 
+      This fact table contains information about orders, including details about customers,
+      products, salespeople, addresses, dates, sales reasons, and credit cards.
+    columns:
+      - name: sk_order_detail
+        description: Unique surrogate key for the order detail.
+        tests:
+          - unique
+          - not_null
+      
+      - name: fk_customer
+        description: Foreign key to the Customer dimension.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customers')
+              field: sk_customer
+      
+      - name: fk_product
+        description: Foreign key to the Product dimension.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_products')
+              field: sk_product
+      
+      - name: fk_seller
+        description: Foreign key to the Salesperson dimension.
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_sellers')
+              field: sk_seller
+      
+      - name: fk_ship_address
+        description: Foreign key to the Address dimension (shipping address).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_address')
+              field: sk_address
+      
+      - name: fk_bill_address
+        description: Foreign key to the Address dimension (billing address).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_address')
+              field: sk_address
+      
+      - name: fk_order_date
+        description: Foreign key to the Date dimension (order date).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: sk_date
+      
+      - name: fk_ship_date
+        description: Foreign key to the Date dimension (shipping date).
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_dates')
+              field: sk_date
+      
+      - name: quantity
+        description: Quantity of products in the order detail.
+        tests:
+          - not_null
+      
+      - name: unit_price
+        description: Unit price of the product.
+        tests:
+          - not_null
+      
+      - name: discount_pct
+        description: Discount percentage applied to the product.
+        tests:
+          - not_null
+      
+      - name: subtotal_value
+        description: Order subtotal before discount.
+      
+      - name: discount_value
+        description: Discount amount applied.
+      
+      - name: subtotal_ned_value
+        description: Order subtotal after discount.
+      
+      - name: freight_apportionment
+        description: Freight cost allocated per item.
+      
+      - name: subtotal_order
+        description: Order subtotal including allocated freight.
+      
+      - name: seller_commission
+        description: Salesperson's commission amount.
+      
+      - name: order_id
+        description: Identifier of the order.
+        tests:
+          - not_null
+      
+      - name: sales_reason
+        description: Reason for the sale.
+      
+      - name: sales_reason_type
+        description: Type of sales reason.
+      
+      - name: credit_card_type
+        description: Type of credit card used.
+      
+      - name: is_online
+        description: Indicates whether the order was placed online (true/false).

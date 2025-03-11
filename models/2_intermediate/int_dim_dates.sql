@@ -6,7 +6,7 @@ with
         {% endset %}
 
         {% set query_max_date %}
-            select max(ship_date)
+            select max(ship_date)+1
             from {{ ref('stg_sales_order_header') }}
         {% endset %}
 
